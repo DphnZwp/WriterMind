@@ -15,7 +15,7 @@ In the app you can create challenges for yourself.
 
 You can also set a deadline for yourself so that you know when your document must be completed.
 
-## Doelgroep
+## Target audience
 My target groups are young people and writers who suffer from procrastination.
 
 ## Wiki
