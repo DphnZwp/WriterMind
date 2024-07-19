@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm2e72uaox6cf"]
+
+[ext_resource type="Script" path="res://app.gd" id="1_we4x1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_we4x1")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_top = 61.0
+offset_right = 1153.0
+offset_bottom = 649.0
+
+[node name="Open file" type="Button" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 195.0
+offset_bottom = 47.0
+text = "Open tekst bestand"
+
+[node name="Save file" type="Button" parent="."]
+offset_left = 206.0
+offset_top = 14.0
+offset_right = 308.0
+offset_bottom = 47.0
+text = "Opslaan
+"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open een bestand"
+position = Vector2i(350, 110)
+size = Vector2i(500, 500)
+ok_button_text = "Open"
+file_mode = 0
+
+[node name="SaveDialog" type="FileDialog" parent="."]
+position = Vector2i(350, 110)
+size = Vector2i(500, 500)
+ok_button_text = "Open"
+file_mode = 0
+
+[connection signal="pressed" from="Open file" to="." method="_on_open_file_pressed"]
+[connection signal="pressed" from="Save file" to="." method="_on_save_file_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
