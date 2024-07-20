@@ -13,23 +13,30 @@ script = ExtResource("1_we4x1")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
-offset_top = 61.0
+offset_top = 48.0
 offset_right = 1153.0
 offset_bottom = 649.0
 
+[node name="New file" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 91.0
+offset_bottom = 41.0
+text = "Nieuw"
+
 [node name="Open file" type="Button" parent="."]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 14.0
-offset_right = 195.0
-offset_bottom = 47.0
-text = "Open tekst bestand"
+offset_left = 100.0
+offset_top = 8.0
+offset_right = 199.0
+offset_bottom = 41.0
+text = "Openen"
 
 [node name="Save file" type="Button" parent="."]
-offset_left = 206.0
-offset_top = 14.0
-offset_right = 308.0
-offset_bottom = 47.0
+offset_left = 209.0
+offset_top = 8.0
+offset_right = 311.0
+offset_bottom = 41.0
 text = "Opslaan
 "
 
@@ -43,9 +50,16 @@ file_mode = 0
 [node name="SaveDialog" type="FileDialog" parent="."]
 position = Vector2i(350, 110)
 size = Vector2i(500, 500)
+ok_button_text = "Save"
+
+[node name="FileDialog2" type="FileDialog" parent="."]
+title = "Open a File"
+position = Vector2i(350, 100)
+size = Vector2i(500, 500)
 ok_button_text = "Open"
 file_mode = 0
 
 [connection signal="pressed" from="Open file" to="." method="_on_open_file_pressed"]
 [connection signal="pressed" from="Save file" to="." method="_on_save_file_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="file_selected" from="SaveDialog" to="." method="_on_save_dialog_file_selected"]
